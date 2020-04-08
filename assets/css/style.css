@@ -3,7 +3,7 @@
 }
 
 #buttons {
-    background-color: purple;
+
 }
 
 #gifs {
@@ -12,4 +12,12 @@
 
 #search {
     background-color: green;
+}
+
+.fruit-button {
+    margin: 3px;
+}
+
+.fruit-pic {
+    margin: 20px 10px 10px 5px;
 }
