@@ -1,0 +1,15 @@
+#buttons, #gifs, #search {
+    color: white;
+}
+
+#buttons {
+    background-color: purple;
+}
+
+#gifs {
+    background-color: red;
+}
+
+#search {
+    background-color: green;
+}
