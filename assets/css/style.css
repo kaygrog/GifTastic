@@ -1,23 +1,29 @@
-#buttons, #gifs, #search {
-    color: white;
+body {
+    background: #f2f2f2;
 }
 
 #buttons {
+    color: white;
+}
 
+.content {
+    margin-top: 20px;
+}
+
+#topic-text {
+    font-weight: bold;
 }
 
 #gifs {
-    background-color: red;
 }
 
 #search {
-    background-color: green;
 }
 
-.fruit-button {
+.food-button {
     margin: 3px;
 }
 
-.fruit-pic {
+.food-pic {
     margin: 20px 10px 10px 5px;
 }

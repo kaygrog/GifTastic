@@ -21,13 +21,19 @@
     </header>
 
     <!-- Container to hold gifs and search -->
-    <div class="container-fluid">
+    <div class="container-fluid content">
         <div class="row">
             <div id="gifs" class="col-8">
                 <p>This is where the gifs will go!</p>
             </div>
             <div id="search" class="col-4">
-                <p>This is where the search will go!</p>
+                <form>
+                    <div class="form-group">
+                      <label for="topic-search" id="topic-text">Add a topic</label>
+                      <input type="search" class="form-control" id="topic-search">
+                    </div>
+                    <button type="submit" class="btn btn-info">Submit</button>
+                  </form>
             </div>
         </div>
     </div>

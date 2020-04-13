@@ -1,17 +1,23 @@
 var topics = ["banana", "apple", "peach", "pear", "kiwi", "grape", "orange",
-              "plantain", "raspberry", "blueberry", "strawberry", "passionfruit",
-              "mango", "guava", "pomegranate", "clementine", "tangerine",
-              "cranberry", "dragonfruit", "starfruit", "lemon"]
+              "plantain", "raspberry", "blueberry", "chocolate", "strawberry",
+              "french silk pie", "papaya", "white claw", "lacroix", "pizza",
+              "sweet potato", "baja blast", "taco bell", "watermelon"]
 
-// Add fruit buttons to page
+// Add food buttons to page
 for (var i=0; i < topics.length; i++) {
-    $("#buttons").append("<button type='button' class='btn btn-info fruit-button' id='" + topics[i] + "'>" + topics[i] + "</button>");
+    $("#buttons").append("<button type='button' class='btn btn-info food-button' id='" + topics[i] + "'>" + topics[i] + "</button>");
 }
 
-// When a fruit button is clicked, call the Giphy API and search for gifs using the button id as the query
-$(".fruit-button").on("click", function() {
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=scg3lg7S0jY6WEdDMnDymRFBHblIReU8&q=" + this.id + "&limit=10";
+// When a food button is clicked, call the Giphy API and search for gifs using the button id as the search query
+$(".food-button").on("click", function() {
+    
+    // Clear gifs div
+    $("#gifs").text("");
 
+    // Create the url to use for the Giphy API call using the button id as the search query
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=scg3lg7S0jY6WEdDMnDymRFBHblIReU8&q=" + this.id + "&limit=10&rating=r";
+
+    // Giphy API call
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -22,16 +28,18 @@ $(".fruit-button").on("click", function() {
         // Store the array of data from the Giphy API call resposne
         var gifs = response.data;
 
-        // Loop through the array and add the gifs to the page
+        // Loop through the array and add the images to the page
         for (var i=0; i < gifs.length; i++) {
             var stillURL = response.data[i].images.fixed_width_still.url;
             var animateURL = response.data[i].images.fixed_width.url;
 
+            // Add images to gifs div
             // Make sure still version, animated version, and state of image are stored as attributes
-            $("#gifs").append("<img class='fruit-pic' src='" + stillURL + "' data-still='" + stillURL + "' data-animate='" + animateURL + "' data-state='still'>");
+            $("#gifs").append("<img class='food-pic' src='" + stillURL + "' data-still='" + stillURL + "' data-animate='" + animateURL + "' data-state='still'>");
         }
 
-        $(".fruit-pic").on("click", function() {
+        // When an image is clicked, call function to either animate or make still
+        $(".food-pic").on("click", function() {
             changeImage(this);
         });
 
