@@ -2,28 +2,25 @@ body {
     background: #f2f2f2;
 }
 
-#buttons {
-    color: white;
-}
-
 .content {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-#topic-text {
+.instruction-text {
+    margin: 15px 0 5px 0;
     font-weight: bold;
 }
 
 #gifs {
-}
-
-#search {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .food-button {
+    color: white;
     margin: 3px;
 }
 
-.food-pic {
-    margin: 20px 10px 10px 5px;
+.food-pic, .rating {
+    margin: 0 10px 10px 5px;
 }

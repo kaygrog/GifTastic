@@ -16,23 +16,26 @@
     <!-- Container to hold buttons -->
     <header class="container-fluid">
         <div class="row">
-            <div id="buttons" class="col-12"></div>
+            <div id="buttons" class="col-12">
+                <p class="instruction-text">Click a button to get images</p>
+            </div>
         </div>
     </header>
 
     <!-- Container to hold gifs and search -->
     <div class="container-fluid content">
         <div class="row">
-            <div id="gifs" class="col-8">
-                <p>This is where the gifs will go!</p>
+            <div class="col-8">
+                <p class="instruction-text">Click the images to animate</p>
+                <div id="gifs"></div>
             </div>
             <div id="search" class="col-4">
                 <form>
                     <div class="form-group">
-                      <label for="topic-search" id="topic-text">Add a topic</label>
-                      <input type="search" class="form-control" id="topic-search">
+                      <label for="topic-search" class="instruction-text">Add a topic</label>
+                      <input type="text" class="form-control" id="topic-search">
                     </div>
-                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="button" class="btn btn-info" id="submit-button">Submit</button>
                   </form>
             </div>
         </div>
